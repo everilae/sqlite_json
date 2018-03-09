@@ -1,6 +1,9 @@
 sqlite_json
 ===========
 
+This plugin provides support for the SQLite json1_ extension in the form of an
+engine plugin and extended `JSON` type.
+
 Install
 -------
 
