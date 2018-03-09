@@ -1,6 +1,13 @@
 sqlite_json
 ===========
 
+Install
+-------
+
+.. code::
+
+    pip install git+https://github.com/everilae/sqlite_json
+
 Usage
 -----
 
