@@ -1,13 +1,10 @@
 from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.dialects import plugins
 from sqlalchemy.dialects.mysql.json import JSONIndexType, JSONPathType
 from sqlalchemy.engine import CreateEnginePlugin
 
 from sqlalchemy.sql.elements import BinaryExpression
 from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql.operators import \
-    json_getitem_op, \
-    json_path_getitem_op
+from sqlalchemy.sql.operators import json_getitem_op, json_path_getitem_op
 
 __all__ = [
     "JSON",
