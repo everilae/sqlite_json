@@ -94,5 +94,3 @@ class JsonPlugin(CreateEnginePlugin):
 
     def engine_created(self, engine):
         monkeypatch_dialect(engine.dialect)
-
-plugins.register("jsonplugin", "sqlite_json", "JsonPlugin")
