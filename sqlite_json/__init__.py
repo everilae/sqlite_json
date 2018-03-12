@@ -82,9 +82,9 @@ def monkeypatch_dialect(dialect):
         dialect.colspecs[sqltypes.JSON.JSONIndexType] = JSONIndexType
         dialect.colspecs[sqltypes.JSON.JSONPathType] = JSONPathType
 
-    if "json" not in dialect.ischema_names:
+    if "JSON" not in dialect.ischema_names:
         dialect.ischema_names = dialect.ischema_names.copy()
-        dialect.ischema_names["json"] = JSON
+        dialect.ischema_names["JSON"] = JSON
 
 
 class JsonPlugin(CreateEnginePlugin):
