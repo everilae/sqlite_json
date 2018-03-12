@@ -3,7 +3,7 @@ from sqlalchemy.dialects.mysql.json import JSONIndexType, JSONPathType
 from sqlalchemy.engine import CreateEnginePlugin
 
 from sqlalchemy.sql.elements import BinaryExpression
-from sqlalchemy.sql import sqltypes
+from sqlalchemy import types as sqltypes
 from sqlalchemy.sql.operators import json_getitem_op, json_path_getitem_op
 
 __all__ = [
@@ -59,14 +59,14 @@ def compile_binary(binary, compiler, override_operator=None, **kw):
 
 def visit_json_getitem_op_binary(compiler, binary, operator, **kw):
     return "JSON_EXTRACT(%s, %s)" % (
-        compiler.process(binary.left),
-        compiler.process(binary.right))
+        compiler.process(binary.left, **kw),
+        compiler.process(binary.right, **kw))
 
 
 def visit_json_path_getitem_op_binary(compiler, binary, operator, **kw):
     return "JSON_EXTRACT(%s, %s)" % (
-        compiler.process(binary.left),
-        compiler.process(binary.right))
+        compiler.process(binary.left, **kw),
+        compiler.process(binary.right, **kw))
 
 
 def monkeypatch_dialect(dialect):
