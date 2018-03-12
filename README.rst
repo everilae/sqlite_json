@@ -26,17 +26,6 @@ else
 
     >>> engine = create_engine("sqlite:///?plugin=jsonplugin")
 
-Because of the way how json1_ extension's `JSON_EXTRACT()` works models have to
-use the `JSON` type provided by this package:
-
-.. code:: python
-
-    from sqlite_json import JSON
-
-    class MyModel(Base):
-        ...
-        data = Column(JSON)
-
 License
 -------
 
