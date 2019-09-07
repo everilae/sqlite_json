@@ -47,7 +47,7 @@ def compile_binary(binary, compiler, override_operator=None, **kw):
             compiler, binary, operator, override_operator=override_operator,
             **kw)
 
-    return compiler.process(binary, override_operator=override_operator, **kw)
+    return compiler.visit_binary(binary, override_operator=override_operator, **kw)
 
 
 def visit_json_getitem_op_binary(compiler, binary, operator, **kw):
